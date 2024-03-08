@@ -6,6 +6,7 @@ Features:
 
 
 Encryption: Input any word and a secret key to produce the encrypted ciphertext.
+
 Decryption (Coming Soon): Future updates will include decryption functionality to reverse the process and retrieve the original word from the ciphertext.
 Usage
 
