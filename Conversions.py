@@ -49,6 +49,8 @@ def bin2hex(input):
     hex=hex+lis[s] 
   return hex
   
+# Conversions -------------Copyright goes to https://github.com/Abdellrhman-Khaled ---------------------------------------
+
 
 def bin2dec(input):  
   decimal,i=0,0
@@ -77,4 +79,28 @@ def XOR(x,y):
     else: 
       result=result+"1"
   return result
+
+
+def Assci_to_hex(ascii_string):
+    
+    hex_string = ''.join(format(ord(char), '02x') for char in ascii_string)
+    
+    
+    hex_chunks = [hex_string[i:i+16] for i in range(0, len(hex_string), 16)]
+    
+
+    if len(hex_chunks[-1]) < 16:
+        hex_chunks[-1] = hex_chunks[-1].ljust(16, '0')
+    
+    return hex_chunks
+
+
+def hex_to_ascii(hex_chunks): 
+   
+   hex_string = ''.join(hex_chunks) 
+    
+   ascii_string = ''.join(chr(int(hex_string[i:i+2], 16)) for i in range(0, len(hex_string), 2)) 
+   return ascii_string.strip('\x00')
+
+
 
