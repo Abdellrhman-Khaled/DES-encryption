@@ -49,6 +49,8 @@ s = [
          [2, 1, 14, 7, 4, 10, 8, 13, 15, 12, 9, 0, 3, 5, 6, 11]]
       ]
 
+# Constants -------------Copyright goes to https://github.com/Abdellrhman-Khaled ---------------------------------------
+
 
 ShiftingTable=[1, 1, 2, 2, 
             2, 2, 2, 2, 
@@ -85,6 +87,8 @@ ExpantionPerm=[32, 1, 2, 3, 4, 5,
             20, 21, 22, 23, 24, 25,
             24, 25, 26, 27, 28, 29,
             28, 29, 30, 31, 32, 1]
+
+# Constants -------------Copyright goes to https://github.com/Abdellrhman-Khaled ---------------------------------------
 
 
 PermTable=[16, 7, 20, 21, 29, 12, 28, 17,
