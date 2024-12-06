@@ -10,12 +10,18 @@ def hexa2bin(input):
         '7' : "0111",  
         '8' : "1000", 
         '9' : "1001",  
-        'A' : "1010", 
-        'B' : "1011",  
-        'C' : "1100", 
-        'D' : "1101",  
-        'E' : "1110", 
-        'F' : "1111" } 
+        'A' : "1010",
+        'a' : "1010", 
+        'B' : "1011",
+        'b' : "1011",  
+        'C' : "1100",
+        'c' : "1100", 
+        'D' : "1101",
+        'd' : "1101",  
+        'E' : "1110",
+        'e' : "1110", 
+        'F' : "1111",
+        'f' : "1111" } 
   binary = "" 
   for i in range(len(input)): 
     binary = binary + lis[input[i]] 
@@ -103,4 +109,14 @@ def hex_to_ascii(hex_chunks):
    return ascii_string.strip('\x00')
 
 
+def binary_to_hex(binary_string):
+    
+    binary_chunks = [binary_string[i:i+64] for i in range(0, len(binary_string), 64)]
+    hex_chunks = []
 
+    for chunk in binary_chunks:
+        
+        hex_value = hex(int(chunk, 2))[2:]  
+        hex_chunks.append(hex_value.zfill(16))  
+    
+    return hex_chunks
