@@ -55,7 +55,6 @@ def bin2hex(input):
     hex=hex+lis[s] 
   return hex
   
-# Conversions -------------Copyright goes to https://github.com/Abdellrhman-Khaled ---------------------------------------
 
 
 def bin2dec(input):  
