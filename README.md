@@ -1,42 +1,54 @@
 Overview:
 
-The Word Cipher is a command-line utility that enables users to both encrypt and decrypt words using a secret key. By inputting a word and its corresponding key, the tool generates the encrypted ciphertext or retrieves the original word from the ciphertext. This is ideal for secure communication or safeguarding sensitive information.
+The Word Cipher is an advanced command-line utility for secure communication. It now features encryption, decryption, and peer-to-peer messaging using sockets with the Diffie-Hellman key exchange for secure session key generation. This ensures robust communication while maintaining data confidentiality.
 
 Features:
 
 Encryption: Input any word and a secret key to produce the encrypted ciphertext.
 Decryption: Reverse the process by inputting the ciphertext and the secret key to retrieve the original word.
+Diffie-Hellman Key Exchange: Securely exchange keys between peers to establish a shared session key.
+Peer-to-Peer Communication: Use sockets to enable two peers to communicate securely by encrypting messages with the session key.
 Usage
 
 Installation:
 
 Clone this repository to your local machine.
 Ensure you have Python installed (version 3.6 or higher).
-Run the Encryption or Decryption:
 
-Open a terminal or command prompt.
-Navigate to the project directory.
-Execute the following command:
-bash
+Start Peer 1:
+Run the following script to act as the server:
+
+python
 Copy code
-python DES.py  
-Follow the prompts to input your word or ciphertext and secret key.
-Example
+import socket  
+from diffi import generate_dh_parameters, generate_dh_keys, compute_shared_key, hex_session_key  
+from Text_encryption_decryption import message_encryption, message_decryption  
 
-To encrypt the word “266200199BBCDFF1” with the key “0123456789ABCDEF”:
+# Peer 1 (Server) setup code...  
+Start Peer 2:
+Use a complementary script to connect to the server, exchange keys, and begin encrypted communication.
 
-Input word: 266200199BBCDFF1
-Secret key: 0123456789ABCDEF
-Ciphertext: 4E0E6864B5E1CA52
+Example Peer Communication
 
-To decrypt the ciphertext 4E0E6864B5E1CA52 using the same key:
+Peer 1 initializes the Diffie-Hellman parameters and generates its keys:
 
-Ciphertext: 4E0E6864B5E1CA52
-Secret key: 0123456789ABCDEF
-Original word: 266200199BBCDFF1
+Sends p, g, and public key to Peer 2.
+Receives Peer 2’s public key and computes a shared session key.
+Peer 2 follows the same steps, ensuring both peers establish a secure channel.
+
+Encrypted messages are then exchanged as follows:
+
+Peer 1: Encrypts and sends a message using the session key.
+Peer 2: Decrypts the message and responds similarly.
+Example Interaction:
+
+Peer 1:
+
+You: Hello, Peer 2!  
+Peer 2: Hi, Peer 1! How are you?  
 
 Notes:
 
-Choose a strong and unique key for better security.
-Keep your key confidential; anyone with the key can decrypt the ciphertext.
-Feel free to contribute or enhance this tool by submitting pull requests!
+Diffie-Hellman ensures secure key exchange without directly transmitting sensitive information.
+Encryption and decryption maintain message confidentiality during peer-to-peer communication.
+Ensure proper key management and keep your session key confidential.
