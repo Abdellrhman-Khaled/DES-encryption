@@ -11,6 +11,7 @@ key = "133457799BBCDFF1"
 #------------------------- meesage encryption 
 #This function takes an input ascii string and a 16 hexadecimal string key and return a hexadecimal encrypted string 
 def message_encryption(message , key):
+ 
     # message is ascii string
     hex_chunks = Assci_to_hex(message)
     print(hex_chunks)
@@ -18,7 +19,10 @@ def message_encryption(message , key):
     for i in range(len(hex_chunks)):
       encrypted_text += encrypt(hex_chunks[i],key)
     
-    return bin2hex(encrypted_text)
+    hex = bin2hex(encrypted_text)
+
+    ascci =hex_to_ascii(hex)
+    return hex
 #------------------------------------------
 
 #---------------------message decryption
