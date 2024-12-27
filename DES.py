@@ -1,4 +1,6 @@
 
+# -------------Copyright goes to https://github.com/Abdellrhman-Khaled ---------------------------------------
+
 from Constants import *
 from Conversions import *
 
@@ -18,8 +20,6 @@ def ShiftingLeft(key,nth_shifts):
     s=""  
   return key
 
-
-# Encryption -------------Copyright goes to https://github.com/Abdellrhman-Khaled ---------------------------------------
 
 
 def encrypt(input,key):
@@ -96,8 +96,6 @@ def encrypt(input,key):
   return Cipher
 
 
-
-# Decryption -------------Copyright goes to https://github.com/Abdellrhman-Khaled ---------------------------------------
 
 def decrypt(input,key):
   print("Decryption")
